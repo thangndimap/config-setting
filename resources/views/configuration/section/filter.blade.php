@@ -1,5 +1,8 @@
 @extends('common.filter_layout')
 @section('section_filter')
+    @php
+        $config_input = config('configuration.config_input') ?? [];
+    @endphp
 <div class="sidebar-section">
     <div class="sidebar-section-header">
         <span class="font-weight-semibold">Sidebar search</span>
@@ -15,9 +18,11 @@
                 <label class="control-label" >Module</label>
                 <select name="filter[module]" class="form-control select2_single">
                     <option value="">Seclect module</option>
-                    @foreach (config('data.config_module') as $key => $module)
-                        <option value="{{$key}}" @selected(!empty($filter['module']) && $filter['module'] == $key)>{{$module}}</option>
-                    @endforeach
+                    @if(!empty($config_input))
+                        @foreach ($config_input as $k => $input)
+                            <option value="{{$k}}" @selected(!empty($filter['module']) && $filter['module'] == $k)>{{$input}}</option>
+                        @endforeach
+                    @endif
                 </select>
             </div>
             <div class="form-group">
