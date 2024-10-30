@@ -182,7 +182,7 @@
                                                             type="text" placeholder="" name="config[' + index + '][key]" value="'+item.key+'" required style="min-width:200px !important">\
                                                         </td>\
                                                         <td>\
-                                                            <input class="form-control" id="field_operator_' + index +'" type="text" '+(item.value ?? '') + ''+' placeholder="" name="config[' + index + '][value]" style="min-width:200px !important">\
+                                                            <input class="form-control" id="field_operator_' + index +'" type="text" value="'+(item.value ?? '') + '" placeholder="" name="config[' + index + '][value]" style="min-width:200px !important">\
                                                         </td>\
                                                         <td>\
                                                             <select name="config[' + index + '][status]" class="form-control select2_single" require>\
