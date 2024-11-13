@@ -1,6 +1,3 @@
-<?php
-
-
 
 function findDuplicates($arr) {
     // Đếm số lần xuất hiện của từng phần tử
